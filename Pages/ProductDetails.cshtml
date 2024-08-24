@@ -1,8 +1,7 @@
-﻿@page
-@model IndexModel
+﻿@page "{id:int}"
+@model Enterprise_Programming_in_C_Project.Pages.ProductDetailsModel
 @{
-    ViewData["Title"] = "SA Online Mart - Home";
-    var products = Model.Products; //Products is a list of product objects passed from the backend
+    ViewData["Title"] = "Product Details";
 }
 
 <!DOCTYPE html>
@@ -28,20 +27,13 @@
     <!-- Main Content -->
     <main>
         <div class="container">
-            <h2>Our Products</h2>
-            <div class="product-grid">
-                @foreach (var product in products)
-                {
-                    <div class="product-card">
-                        <img src="@product.ImageUrl" alt="@product.Name">
-                        <h3>@product.Name</h3>
-                        <p>@product.Description</p>
-                        <p>Price: R @product.Price</p>
-                        <a href="/ProductDetails/@product.Id" class="btn">View Details</a>
-
-                    </div>
-                }
+            <h2>@Model.Product.Name</h2>
+            <div class="product-detail">
+                <img src="@Model.Product.ImageUrl" alt="@Model.Product.Name">
+                <p>@Model.Product.Description</p>
+                <p>Price: R @Model.Product.Price</p>
             </div>
+            <a href="/Cart" class="btn">Add to Cart</a>
         </div>
     </main>
 
