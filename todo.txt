@@ -1,6 +1,8 @@
 Front-End. Develop a user-friendly interface for both customers and administrators
 Tasks:
-[] Create a homepage that showcases a list of products.
+[In Development] Create a homepage that showcases a list of products.
+	[Done] Create a rough Template to view styling
+	[ToDo] Get Products from database instead of hard code
 [] Develop a product detail page where users can view more information about each product.
 [] Implement a shopping cart feature that allows users to add, remove, and update product quantities.
 [] Create a checkout page where users can complete their purchases.
@@ -15,6 +17,6 @@ Tasks
 
 Database design 
 Tasks:
-[] Design a relational database schema to handle products, users, orders, and order items.
+[] Design a relational database schema to handle [] products, [] users, [] orders, and [] order items.
 [] Use Entity Framework Core to interact with the database.
 [] Populate the database with sample data for testing purposes.
