@@ -1,0 +1,20 @@
+Front-End. Develop a user-friendly interface for both customers and administrators
+Tasks:
+[] Create a homepage that showcases a list of products.
+[] Develop a product detail page where users can view more information about each product.
+[] Implement a shopping cart feature that allows users to add, remove, and update product quantities.
+[] Create a checkout page where users can complete their purchases.
+[] Develop an admin panel to manage (add, edit, delete) products.
+
+Back-End. Implement the backend logic using C# and .NET Core.
+Tasks
+[] Set up a .NET Core web API to handle product data, user authentication, and order processing.
+[] Implement Create Read Update Delete operations for managing products in the admin panel.
+[] Create endpoints for browsing products, managing the shopping cart, and completing purchases.
+[] Ensure the application follows best practices for security and performance.
+
+Database design 
+Tasks:
+[] Design a relational database schema to handle products, users, orders, and order items.
+[] Use Entity Framework Core to interact with the database.
+[] Populate the database with sample data for testing purposes.
