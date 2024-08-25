@@ -132,6 +132,15 @@ h2 {
         color: #ffb400;
     }
 
+    /*Scaling on the image on the product info page*/
+.product-detail img {
+    max-width: 100%;
+    height: auto; 
+    display: block; 
+    margin: 0 auto 20px; 
+    border-radius: 10px; 
+}
+
 /* Footer */
 footer {
     background-color: #003366;

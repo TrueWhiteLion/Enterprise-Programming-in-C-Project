@@ -3,7 +3,11 @@ Tasks:
 [In Development] Create a homepage that showcases a list of products.
 	[Done] Create a rough Template to view styling
 	[ToDo] Get Products from database instead of hard code
-[] Develop a product detail page where users can view more information about each product.
+[In Development] Develop a product detail page where users can view more information about each product.
+	[Done] Create Page and bring product details to it
+	[Done] Pull images from external links
+	[Done] Impliment some css to make sure images scale correctly.
+	[] Impliment add to cart button
 [] Implement a shopping cart feature that allows users to add, remove, and update product quantities.
 [] Create a checkout page where users can complete their purchases.
 [] Develop an admin panel to manage (add, edit, delete) products.
