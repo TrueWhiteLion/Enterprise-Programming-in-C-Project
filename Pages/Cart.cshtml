@@ -1,0 +1,73 @@
+﻿@page
+@model Enterprise_Programming_in_C_Project.Pages.CartModel
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="nav-brand">SA Online Mart</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/Cart">Cart (@Model.CartItems.Sum(item => item.Quantity))</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h2>Your Cart</h2>
+            <form method="post" asp-page-handler="UpdateQuantity">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CartItems)
+                        {
+                            <tr>
+                                <td>@item.Product.Name</td>
+                                <td>
+                                    <input type="number" name="quantity" value="@item.Quantity" min="1" />
+                                    <input type="hidden" name="productId" value="@item.Product.Id" />
+                                </td>
+                                <td>R @item.Product.Price</td>
+                                <td>
+                                    <form method="post" asp-page-handler="RemoveItem" style="display:inline;">
+                                        <input type="hidden" name="productId" value="@item.Product.Id" />
+                                        <button type="submit" class="btn">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SA Online Mart. Proudly South African.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

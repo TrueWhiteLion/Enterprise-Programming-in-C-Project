@@ -1,23 +1,34 @@
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Enterprise_Programming_in_C_Project.Services;
+using Enterprise_Programming_in_C_Project;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Enterprise_Programming_in_C_Project.Pages
+public class ProductDetailsModel : PageModel
 {
-    public class ProductDetailsModel : PageModel
+    private readonly ProductService _productService;
+    private readonly CartService _cartService;
+
+    public ProductDetailsModel(ProductService productService, CartService cartService)
     {
-        private readonly ProductService _productService;
+        _productService = productService;
+        _cartService = cartService;
+    }
 
-        public ProductDetailsModel(ProductService productService)
+    public Product Product { get; set; }
+    public int CartItemCount => _cartService.GetCartItemCount();
+
+    public void OnGet(int id)
+    {
+        Product = _productService.GetProductById(id);
+    }
+
+    public IActionResult OnPostAddToCart(int productId, int quantity)
+    {
+        var product = _productService.GetProductById(productId);
+        if (product != null && quantity > 0)
         {
-            _productService = productService;
+            _cartService.AddToCart(product, quantity);
         }
-
-        public Product Product { get; set; }
-
-        public void OnGet(int id)
-        {
-            Product = _productService.GetProductById(id);
-        }
+        return RedirectToPage(); // Refresh the current page
     }
 }
-

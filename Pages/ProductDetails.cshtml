@@ -19,7 +19,7 @@
             <a href="/" class="nav-brand">SA Online Mart</a>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
-                <li><a href="/Cart">Cart</a></li>
+                <li><a href="/Cart">Cart (@Model.CartItemCount)</a></li>
             </ul>
         </div>
     </nav>
@@ -33,8 +33,23 @@
                 <p>@Model.Product.Description</p>
                 <p>Price: R @Model.Product.Price</p>
             </div>
-            <a href="/Cart" class="btn">Add to Cart</a>
+
+            <!-- Add to Cart Form -->
+            <form method="post" asp-page-handler="AddToCart">
+                <input type="hidden" name="productId" value="@Model.Product.Id" />
+                <input type="number" name="quantity" value="1" min="1" />
+                <button type="submit" class="btn">Add to Cart</button>
+            </form>
+
         </div>
+
+        @if (ModelState.IsValid == false)
+        {
+            <div class="alert alert-danger">
+                @Html.ValidationSummary(true)
+            </div>
+        }
+
     </main>
 
     <!-- Footer -->
@@ -45,3 +60,4 @@
     </footer>
 </body>
 </html>
+
