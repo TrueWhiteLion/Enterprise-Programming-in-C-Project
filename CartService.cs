@@ -1,60 +1,59 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using Enterprise_Programming_in_C_Project;
 
-namespace Enterprise_Programming_in_C_Project.Services
+public class CartService
 {
-    public class CartService
+    private readonly List<CartItem> _cartItems = new List<CartItem>();
+
+    public int GetCartItemCount()
     {
-        private readonly List<CartItem> _cartItems = new List<CartItem>();
+        return _cartItems.Sum(c => c.Quantity); // Total quantity of items in the cart
+    }
 
-        public int GetCartItemCount()
+    public void AddToCart(Product product, int quantity)
+    {
+        var existingItem = _cartItems.FirstOrDefault(c => c.Product.Id == product.Id);
+        if (existingItem != null)
         {
-            return _cartItems.Sum(c => c.Quantity); // Total quantity of items in the cart
+            existingItem.Quantity += quantity;
         }
-
-        public void AddToCart(Product product, int quantity)
+        else
         {
-            var existingItem = _cartItems.FirstOrDefault(c => c.Product.Id == product.Id);
-            if (existingItem != null)
+            _cartItems.Add(new CartItem { Product = product, Quantity = quantity });
+        }
+    }
+
+    public void RemoveFromCart(int productId)
+    {
+        var itemToRemove = _cartItems.FirstOrDefault(c => c.Product.Id == productId);
+        if (itemToRemove != null)
+        {
+            Console.WriteLine($"Removing item: {itemToRemove.Product.Name} (ID: {productId})"); // Debugging output
+            _cartItems.Remove(itemToRemove);
+        }
+        else
+        {
+            Console.WriteLine($"Item with ID {productId} not found in cart."); // Debugging output
+        }
+    }
+
+    public void UpdateCart(int productId, int newQuantity)
+    {
+        var item = _cartItems.FirstOrDefault(c => c.Product.Id == productId);
+        if (item != null)
+        {
+            if (newQuantity <= 0)
             {
-                existingItem.Quantity += quantity;
+                _cartItems.Remove(item);
             }
             else
             {
-                _cartItems.Add(new CartItem { Product = product, Quantity = quantity });
+                item.Quantity = newQuantity;
             }
-        }
-
-        public void RemoveFromCart(int productId)
-        {
-            var itemToRemove = _cartItems.FirstOrDefault(c => c.Product.Id == productId);
-            if (itemToRemove != null)
-            {
-                _cartItems.Remove(itemToRemove);
-            }
-        }
-
-        public void UpdateCart(int productId, int newQuantity)
-        {
-            var item = _cartItems.FirstOrDefault(c => c.Product.Id == productId);
-            if (item != null)
-            {
-                if (newQuantity <= 0)
-                {
-                    _cartItems.Remove(item);
-                }
-                else
-                {
-                    item.Quantity = newQuantity;
-                }
-            }
-        }
-
-        public List<CartItem> GetCartItems()
-        {
-            return _cartItems;
         }
     }
+
+    public List<CartItem> GetCartItems()
+    {
+        return _cartItems;
+    }
 }
-
-
