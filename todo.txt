@@ -10,7 +10,7 @@ Tasks:
 	[Done] Impliment add to cart button
 [] Implement a shopping cart feature that allows users to add, remove, and update product quantities.
 	[Done] Add
-	[Done] Remove
+	[Done] Remove (Removing first Item Issue Present again)
 	[Done] Update Quantities
 	[ToDo] Pust to some form of storage to go to checkout
 [] Create a checkout page where users can complete their purchases.
@@ -18,6 +18,8 @@ Tasks:
 	[Done] Pull details from Cart
 	[] Push details to be used
 [] Develop an admin panel to manage (add, edit, delete) products.
+	[] Create Page
+	[] User Authentication
 	[] Add
 	[] Edit
 	[] Delete
