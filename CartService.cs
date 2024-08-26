@@ -27,12 +27,12 @@ public class CartService
         var itemToRemove = _cartItems.FirstOrDefault(c => c.Product.Id == productId);
         if (itemToRemove != null)
         {
-            Console.WriteLine($"Removing item: {itemToRemove.Product.Name} (ID: {productId})"); // Debugging output
+            Console.WriteLine($"Removing item: {itemToRemove.Product.Name} (ID: {productId})"); // Debugging output remember to remove
             _cartItems.Remove(itemToRemove);
         }
         else
         {
-            Console.WriteLine($"Item with ID {productId} not found in cart."); // Debugging output
+            Console.WriteLine($"Item with ID {productId} not found in cart."); // Debugging output remember to remove
         }
     }
 

@@ -7,17 +7,27 @@ Tasks:
 	[Done] Create Page and bring product details to it
 	[Done] Pull images from external links
 	[Done] Impliment some css to make sure images scale correctly.
-	[] Impliment add to cart button
+	[Done] Impliment add to cart button
 [] Implement a shopping cart feature that allows users to add, remove, and update product quantities.
+	[Done] Add
+	[Done] Remove
+	[Done] Update Quantities
+	[ToDo] Pust to some form of storage to go to checkout
 [] Create a checkout page where users can complete their purchases.
+	[Done] Create Page
+	[Done] Pull details from Cart
+	[] Push details to be used
 [] Develop an admin panel to manage (add, edit, delete) products.
+	[] Add
+	[] Edit
+	[] Delete
 
 Back-End. Implement the backend logic using C# and .NET Core.
 Tasks
 [] Set up a .NET Core web API to handle product data, user authentication, and order processing.
 [] Implement Create Read Update Delete operations for managing products in the admin panel.
-[] Create endpoints for browsing products, managing the shopping cart, and completing purchases.
-[] Ensure the application follows best practices for security and performance.
+[Done] Create endpoints for browsing products, managing the shopping cart, and completing purchases.
+[InProcess] Ensure the application follows best practices for security and performance.
 
 Database design 
 Tasks:
