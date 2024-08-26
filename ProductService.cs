@@ -33,6 +33,15 @@ namespace Enterprise_Programming_in_C_Project.Services
                     Description = "Backend to frontend stuff because funny and yes",
                     Price = 450.00m,
                     ImageUrl = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXh1ZmNvcWQ3dnVhdjMwb25zdXZqdmZ5ZGtwMDA1bWxoNXA3cG53MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2A75RyXVzzSI2bx4Gj/giphy.webp"
+                },
+
+                  new Product
+                {
+                    Id = 3,
+                    Name = "testing the nuber 3 lol",
+                    Description = "3 is by far the lamest number in the alphabet",
+                    Price = 450.00m,
+                    ImageUrl = "https://cdn-icons-png.flaticon.com/512/3840/3840739.png"
                 }
             };
         }

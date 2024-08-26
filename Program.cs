@@ -1,4 +1,8 @@
+using Enterprise_Programming_in_C_Project;
 using Enterprise_Programming_in_C_Project.Services;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,4 +32,4 @@ app.MapRazorPages(); // Map Razor Pages to endpoints
 
 app.Run(); // Run the application
 
-/*Did some more reading to figure out what the above does and added some comments to them*/
+/* Did some more reading to figure out what the above does and added some comments to them */
