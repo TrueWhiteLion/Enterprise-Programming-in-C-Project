@@ -1,7 +1,7 @@
 ﻿@page
-@model Enterprise_Programming_in_C_Project.Pages.OrderConfirmationModel
+@model Enterprise_Programming_in_C_Project.Pages.LoginModel
 @{
-    ViewData["Title"] = "Order Confirmation";
+    ViewData["Title"] = "Login";
 }
 
 <!DOCTYPE html>
@@ -19,8 +19,8 @@
             <a href="/" class="nav-brand">SA Online Mart</a>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
-                <li><a href="/Login">Login</a></li>
                 <li><a href="/Cart">Cart (@Model.CartItemCount)</a></li>
+                <li><a href="/Login">Login</a></li>
             </ul>
         </div>
     </nav>
@@ -28,9 +28,23 @@
     <!-- Main Content -->
     <main>
         <div class="container">
-            <h2>Order Confirmation</h2>
-            <p>Your order has been placed successfully. Thank you for shopping with us!</p>
-            <a href="/" class="btn">Back to Home</a>
+            <h2>Login</h2>
+            <form method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required />
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required />
+
+                <button type="submit" class="btn">Login</button>
+            </form>
+
+            @if (!Model.IsLoginValid)
+            {
+                <div class="alert alert-danger">
+                    Invalid username or password.
+                </div>
+            }
         </div>
     </main>
 

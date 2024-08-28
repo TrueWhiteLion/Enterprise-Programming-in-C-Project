@@ -10,7 +10,7 @@ Tasks:
 	[Done] Impliment add to cart button
 [] Implement a shopping cart feature that allows users to add, remove, and update product quantities.
 	[Done] Add
-	[Todo] Remove (Removing first Item Issue Present again)
+	[Done] Remove
 	[Done] Update Quantities
 	[ToDo] Pust to some form of storage to go to checkout
 [] Create a checkout page where users can complete their purchases.
@@ -27,7 +27,7 @@ Tasks:
 Back-End. Implement the backend logic using C# and .NET Core.
 Tasks
 [] Set up a .NET Core web API to handle product data, user authentication, and order processing.
-[] Implement Create Read Update Delete operations for managing products in the admin panel.
+[InProcess] Implement Create Read Update Delete operations for managing products in the admin panel.
 [Done] Create endpoints for browsing products, managing the shopping cart, and completing purchases.
 [InProcess] Ensure the application follows best practices for security and performance.
 

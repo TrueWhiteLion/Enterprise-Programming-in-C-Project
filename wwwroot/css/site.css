@@ -52,7 +52,7 @@ body {
 
 /* Main Styling */
 .container {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -169,4 +169,47 @@ th {
 
 tr:hover {
     background-color: #f4f4f4;
+}
+
+/*Some admin page formating*/
+
+.table-responsive {
+    overflow-x: auto; /* Adds horizontal scrolling for overflow */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    word-wrap: break-word; 
+}
+
+th {
+    background-color: #003366;
+    color: #ffb400;
+}
+
+tr:hover {
+    background-color: #f4f4f4;
+}
+
+/* Limit the maximum width of specific columns */
+th, td {
+    max-width: 200px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+/* Special styling for image URLs */
+.image-url {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
 }

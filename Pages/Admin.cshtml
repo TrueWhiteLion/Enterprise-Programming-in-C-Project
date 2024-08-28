@@ -1,0 +1,86 @@
+﻿@page
+@model Enterprise_Programming_in_C_Project.Pages.AdminModel
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="nav-brand">SA Online Mart</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/Login">Login</a></li>
+                <li><a href="/Cart">Cart</a></li>                
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h2>Admin - Product List</h2>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Image URL</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.Products)
+                        {
+                            <tr>
+                                <td>@product.Name</td>
+                                <td>@product.Description</td>
+                                <td>@product.Price.ToString("C")</td> <!-- Display price with currency format -->
+                                <td class="image-url">@product.ImageUrl</td>
+                                <td>
+                                    <form method="post" asp-page-handler="DeleteProduct">
+                                        <input type="hidden" name="productId" value="@product.Id" />
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Add New Product</h3>
+            <form method="post" asp-page-handler="AddProduct">
+                <label>Name:</label>
+                <input type="text" name="name" required />
+                <label>Description:</label>
+                <input type="text" name="description" required />
+                <label>Price:</label>
+                <input type="number" name="price" step="0.01" required />
+                <label>Image URL:</label>
+                <input type="text" name="imageUrl" required />
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SA Online Mart. Proudly South African.</p>
+        </div>
+    </footer>
+</body>
+</html>
