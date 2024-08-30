@@ -3,6 +3,8 @@ This project is divided into two main branches.
 - Prototype
 - IntegratedAPI
 
+### DO NOT USE MASTER
+
 The Indev branch has a functional prototype of the web page with the ability to manage a cart, manage items in an admin page and process the order. This page does not have the databases set up as it is there to show functionality and provide a view of how the project works and looks.
 
 IntegratedAPI has its API set up as well as the details for the database and other pushes and calls. Because it is not attached to a database it is not currently functioning and does not work well as a display prototype. This is however closer to what the program would represent when in its final form.
