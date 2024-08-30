@@ -21,27 +21,27 @@ namespace Enterprise_Programming_in_C_Project.Services
                 new Product
                 {
                     Id = 1,
-                    Name = "Yeet Yeet Yite Test",
-                    Description = "This has some stuff in that I want to see how it looks.",
+                    Name = "Test Item 1",
+                    Description = "This is what an item will look like on the site",
                     Price = 200.00m,
-                    ImageUrl = "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    ImageUrl = "https://previews.123rf.com/images/fordzolo/fordzolo1506/fordzolo150600296/41026708-example-white-stamp-text-on-red-backgroud.jpg"
                 },
                 new Product
                 {
                     Id = 2,
-                    Name = "Some more stuff that needs to go",
-                    Description = "Backend to frontend stuff because funny and yes",
+                    Name = "Handbag",
+                    Description = "This is what a handbag would look like on this page",
                     Price = 450.00m,
-                    ImageUrl = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXh1ZmNvcWQ3dnVhdjMwb25zdXZqdmZ5ZGtwMDA1bWxoNXA3cG53MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2A75RyXVzzSI2bx4Gj/giphy.webp"
+                    ImageUrl = "https://t4.ftcdn.net/jpg/01/10/04/51/360_F_110045173_QgmA3gg5OwTlLNQBqmPdFnkh6sPvsvt8.jpg"
                 },
 
                   new Product
                 {
                     Id = 3,
-                    Name = "testing the nuber 3 lol",
-                    Description = "3 is by far the lamest number in the alphabet",
+                    Name = "Example Ball",
+                    Description = "This ball is an example of a nother product that can be displayed on the page",
                     Price = 450.00m,
-                    ImageUrl = "https://cdn-icons-png.flaticon.com/512/3840/3840739.png"
+                    ImageUrl = "https://st.depositphotos.com/1016685/1574/i/450/depositphotos_15741123-stock-photo-rugby-ball.jpg"
                 }
             };
         }
