@@ -16,23 +16,22 @@ Tasks:
 [] Create a checkout page where users can complete their purchases.
 	[Done] Create Page
 	[Done] Pull details from Cart
-	[] Push details to be used
+	[Done] Push details to be used
 [] Develop an admin panel to manage (add, edit, delete) products.
-	[] Create Page
-	[] User Authentication
-	[] Add
-	[] Edit
-	[] Delete
+	[Done] Create Page
+	[Semi Done] User Authentication
+	[Done] Add
+	[Done] Delete
 
 Back-End. Implement the backend logic using C# and .NET Core.
 Tasks
-[] Set up a .NET Core web API to handle product data, user authentication, and order processing.
-[InProcess] Implement Create Read Update Delete operations for managing products in the admin panel.
+[Done] Set up a .NET Core web API to handle product data, user authentication, and order processing.
+[Done] Implement Create Read Update Delete operations for managing products in the admin panel.
 [Done] Create endpoints for browsing products, managing the shopping cart, and completing purchases.
 [InProcess] Ensure the application follows best practices for security and performance.
 
 Database design 
 Tasks:
-[] Design a relational database schema to handle [] products, [] users, [] orders, and [] order items.
-[] Use Entity Framework Core to interact with the database.
-[] Populate the database with sample data for testing purposes.
+[Done] Design a relational database schema to handle [] products, [] users, [] orders, and [] order items.
+[Done] Use Entity Framework Core to interact with the database.
+[Done] Populate the database with sample data for testing purposes.

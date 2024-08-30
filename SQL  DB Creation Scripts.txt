@@ -1,0 +1,50 @@
+﻿-- Create the SA Online Mart Database
+CREATE DATABASE SAOnlineMart;
+
+-- Use the newly created database
+USE SAOnlineMart;
+
+-- Create the Products table
+CREATE TABLE Products (
+    ProductId INT PRIMARY KEY IDENTITY(1,1),  
+    Name NVARCHAR(100) NOT NULL,             
+    Description NVARCHAR(500),              
+    Price DECIMAL(18, 2) NOT NULL CHECK (Price > 0), 
+    ImageUrl NVARCHAR(255)                  
+);
+
+-- Create the Users table
+CREATE TABLE Users (
+    UserId INT PRIMARY KEY IDENTITY(1,1),    
+    Username NVARCHAR(50) NOT NULL UNIQUE,   
+    PasswordHash NVARCHAR(255) NOT NULL,     
+    Email NVARCHAR(100) NOT NULL UNIQUE,     
+    FullName NVARCHAR(100),                  
+    Address NVARCHAR(255),                   
+    City NVARCHAR(50),                      
+    PostalCode NVARCHAR(10),                 
+    CreatedAt DATETIME DEFAULT GETDATE()     
+);
+
+-- Create the Orders table
+CREATE TABLE Orders (
+    OrderId INT PRIMARY KEY IDENTITY(1,1),  
+    UserId INT NOT NULL,                    
+    OrderDate DATETIME DEFAULT GETDATE(),    
+    TotalAmount DECIMAL(18, 2) NOT NULL,     
+    ShippingAddress NVARCHAR(255),           
+    City NVARCHAR(50),                       
+    PostalCode NVARCHAR(10),                 
+    FOREIGN KEY (UserId) REFERENCES Users(UserId) 
+);
+
+-- Create the OrderItems table
+CREATE TABLE OrderItems (
+    OrderItemId INT PRIMARY KEY IDENTITY(1,1), 
+    OrderId INT NOT NULL,                     
+    ProductId INT NOT NULL,                    
+    Quantity INT NOT NULL CHECK (Quantity > 0),
+    UnitPrice DECIMAL(18, 2) NOT NULL,         
+    FOREIGN KEY (OrderId) REFERENCES Orders(OrderId),  
+    FOREIGN KEY (ProductId) REFERENCES Products(ProductId)
+);
